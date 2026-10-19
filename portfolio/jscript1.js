@@ -152,3 +152,31 @@ function goToProj(index) {
 
 if (projSlides.length > 0) setInterval(nextProj, 4000);
 
+// ================= MOBILE NAVIGATION DRAWER =================
+const navToggle = document.getElementById("navToggle");
+const navMenu = document.getElementById("navMenu");
+const navLinksList = document.querySelectorAll(".nav-link");
+
+if (navToggle && navMenu) {
+    // Toggle menu open/close on button click
+    navToggle.addEventListener("click", () => {
+        navToggle.classList.toggle("active");
+        navMenu.classList.toggle("open");
+    });
+
+    // Close menu when a navigation link is clicked
+    navLinksList.forEach(link => {
+        link.addEventListener("click", () => {
+            navToggle.classList.remove("active");
+            navMenu.classList.remove("open");
+        });
+    });
+
+    // Close menu when clicking outside
+    document.addEventListener("click", (e) => {
+        if (!navToggle.contains(e.target) && !navMenu.contains(e.target)) {
+            navToggle.classList.remove("active");
+            navMenu.classList.remove("open");
+        }
+    });
+}
