@@ -798,24 +798,241 @@ section p {
 
 
 
-/* ================= MOBILE PHONES ONLY ================= */
-@media (max-width: 640px) {
+/* ================= MOBILE OPTIMIZATIONS ================= */
+
+/* Prevent horizontal page wobble/scroll on mobile */
+html,
+body {
+    overflow-x: hidden;
+    width: 100%;
+    -webkit-tap-highlight-color: transparent;
+}
+
+/* Base Hamburger Button (Hidden on Desktop) */
+.nav-toggle {
+    display: none;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    flex-direction: column;
+    gap: 5px;
+    padding: 0.5rem;
+    z-index: 1001;
+}
+
+.nav-toggle .bar {
+    width: 24px;
+    height: 2px;
+    background: #ffffff;
+    border-radius: 2px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Hamburger to X morphing animation */
+.nav-toggle.active .bar:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+}
+
+.nav-toggle.active .bar:nth-child(2) {
+    opacity: 0;
+}
+
+.nav-toggle.active .bar:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+}
+
+/* Tablet & Mobile Screens (<= 768px) */
+@media (max-width: 768px) {
     .navbar {
-        padding: 1rem 1.25rem;
+        padding: 0.9rem 1.25rem;
+    }
+
+    .brand {
+        font-size: 1.15rem;
+    }
+
+    /* Show hamburger */
+    .nav-toggle {
+        display: flex;
+    }
+
+    /* Mobile Dropdown Navigation Menu */
+    .nav-menu {
+        position: fixed;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background: rgba(18, 21, 28, 0.98);
+        backdrop-filter: blur(16px);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        padding: 1.5rem 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-15px);
+        transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5);
+    }
+
+    .nav-menu.open {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
     }
 
     .nav-links {
-        gap: 1rem;
+        flex-direction: column;
+        gap: 1.25rem;
+        width: 100%;
+        text-align: center;
     }
 
     .nav-link {
-        font-size: 0.85rem;
+        font-size: 1rem;
+        display: inline-block;
+        padding: 0.5rem 1.5rem;
+    }
+
+    /* Section Spacing on Mobile */
+    section {
+        padding: 3.5rem 1.25rem;
+        min-height: auto;
+    }
+
+    section h2 {
+        font-size: 2rem;
+    }
+
+    #home {
+        padding: 3.5rem 1.25rem 2.5rem;
+    }
+
+    /* Hero Layout */
+    .home-container {
+        gap: 2rem;
     }
 
     #home .hero-name {
-        font-size: 2.5rem;
+        font-size: clamp(1.8rem, 6vw, 2.3rem);
+        line-height: 1.25;
+    }
+
+    .hero-role {
+        font-size: 1.1rem;
+        min-height: 2.2rem;
+    }
+
+    .home-bio {
+        font-size: 0.95rem;
+        text-align: left;
+        line-height: 1.65;
+    }
+
+    .home-actions {
+        justify-content: center;
+        gap: 1.25rem;
+    }
+
+    /* Home Carousel on Mobile */
+    .carousel-frame {
+        width: min(300px, 85vw);
+        height: 380px;
+    }
+
+    /* Cards */
+    .education-container,
+    .experience-list-container,
+    .project-row {
+        margin-top: 1.8rem;
+        gap: 1.5rem;
+    }
+
+    .education-card,
+    .experience-card,
+    .project-card {
+        padding: 1.5rem 1.2rem;
+        border-radius: 16px;
+    }
+
+    .education-card h3,
+    .experience-card h3,
+    .project-card h3 {
+        font-size: 1.2rem;
+    }
+
+    .project-description {
+        font-size: 0.92rem;
+        text-align: left;
+        line-height: 1.65;
+    }
+
+    /* Experience & Project Carousel Frames */
+    .mini-carousel-frame {
+        height: 240px;
+        min-height: 240px;
+        border-radius: 16px;
+    }
+
+    /* Larger touch-targets for dots so fingers tap easily */
+    .dot,
+    .ubix-dot,
+    .red-dot,
+    .proj-dot {
+        position: relative;
+    }
+
+    .dot::after,
+    .ubix-dot::after,
+    .red-dot::after,
+    .proj-dot::after {
+        content: '';
+        position: absolute;
+        top: -10px;
+        bottom: -10px;
+        left: -8px;
+        right: -8px;
+    }
+
+    /* Smoother scroll-reveal animation on mobile */
+    .reveal {
+        transform: translateY(24px) scale(0.99);
     }
 }
+
+/* Small Phones (<= 480px, e.g. iPhone SE, Galaxy A) */
+@media (max-width: 480px) {
+    section {
+        padding: 3rem 1rem;
+    }
+
+    #home .greeting {
+        font-size: 0.85rem;
+    }
+
+    .btn-resume {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .social-links {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .tag {
+        font-size: 0.78rem;
+        padding: 0.35rem 0.65rem;
+    }
+}
+
+/* Scroll reveal active state */
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+
 
 /* ================= SCROLL REVEAL (SLOW POPPING UP) ================= */
 .reveal {
