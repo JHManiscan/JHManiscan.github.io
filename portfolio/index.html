@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Engr. Saseh</title>
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style1.css">
+    <script src="jscript1.js" defer></script>
+</head>
+
+<body>
+    <!-- Header / Navigation -->
+    <header class="navbar">
+        <a href="#home" class="brand">
+            ENGR. SASEH
+        </a>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="#home" class="nav-link">HOME</a></li>
+                <li><a href="#education" class="nav-link">EDUCATION</a></li>
+                <li><a href="#experience" class="nav-link">EXPERIENCE</a></li>
+                <li><a href="#projects" class="nav-link">PROJECTS</a></li>
+            </ul>
+
+        </nav>
+    </header>
+
+    <!-- Main Sections -->
+    <main>
+        <!-- HOME SECTION -->
+        <section id="home">
+            <div class="home-container">
+                <!-- Left Column: Bio / Intro -->
+                <!-- Left Column: Bio / Intro -->
+                <div class="home-text">
+                    <span class="greeting">HELLO, I'M</span>
+                    <h1 class="hero-name">John Harold J. Maniscan</h1>
+
+                    <!-- Blinking & Typing Role Text -->
+                    <h3 class="hero-role"><span class="typing-text"></span><span class="cursor">|</span></h3>
+
+                    <p>I am a Computer Engineering graduate with hands-on experience in technical support, hardware and
+                        software troubleshooting, and network setup. I am passionate about technology, problem-solving,
+                        and continuous learning. My goal is to become a Software Engineer, and I am currently seeking an
+                        entry-level opportunity where I can apply my programming knowledge, develop my skills, and grow
+                        as a software developer.</p>
+
+
+
+                    <!-- Resume Button & Social Links -->
+                    <div class="home-actions">
+                        <!-- Put your resume PDF file name in href="..." -->
+                        <a href="CV_JHMANISCAN.pdf" download="John_Harold_Maniscan_Resume.pdf" class="btn-resume">
+                            <svg class="btn-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                <polyline points="7 10 12 15 17 10"></polyline>
+                                <line x1="12" y1="15" x2="12" y2="3"></line>
+                            </svg>
+                            Download Resume
+                        </a>
+
+                        <!-- Social Media Links (replace '#' with your profile URLs) -->
+                        <div class="social-links">
+                            <!-- LinkedIn -->
+                            <a href="https://linkedin.com/in/john-harold-maniscan-a02656198" target="_blank"
+                                rel="noopener noreferrer" class="social-icon" aria-label="LinkedIn">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path
+                                        d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+                                </svg>
+                            </a>
+
+                            <!-- Facebook -->
+                            <a href="https://www.facebook.com/claudyfiefy" target="_blank" rel="noopener noreferrer"
+                                class="social-icon" aria-label="Facebook">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path
+                                        d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+                                </svg>
+                            </a>
+
+                            <!-- GitHub -->
+                            <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="social-icon"
+                                aria-label="GitHub">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path
+                                        d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Column: Auto-sliding Image Carousel -->
+                <div class="home-carousel">
+                    <div class="carousel-frame">
+                        <!-- Replace src with your own image paths (e.g. photo1.jpg, photo2.jpg) -->
+                        <div class="carousel-slide active">
+                            <img src="photos/me1.jpg" alt="Photo 1">
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="photos/me2.jpg" alt="Photo 2">
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="photos/me3.jpg" alt="Photo 3">
+                        </div>
+                    </div>
+
+                    <!-- Slide Indicator Dots -->
+                    <div class="carousel-dots">
+                        <span class="dot active" onclick="goToSlide(0)"></span>
+                        <span class="dot" onclick="goToSlide(1)"></span>
+                        <span class="dot" onclick="goToSlide(2)"></span>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- EDUCATION SECTION -->
+        <!-- EDUCATION SECTION -->
+        <section id="education">
+            <h2>Education</h2>
+
+            <div class="education-container">
+                <!-- College Degree Card -->
+                <div class="education-card">
+                    <span class="card-badge">College</span>
+                    <h3>Bachelor of Science in Computer Engineering</h3>
+                    <h4 class="school-name">Southern Luzon State University - Main Campus</h4>
+                    <p class="college-dept">College of Engineering</p>
+                    <div class="education-tags">
+                        <span class="tag gwa">GWA: 2.28</span>
+                        <span class="tag">Computer Engineering</span>
+                    </div>
+                </div>
+
+                <!-- Senior High School Card -->
+                <div class="education-card">
+                    <span class="card-badge">Senior High School</span>
+                    <h3>STEM Strand (Science, Technology, Engineering & Math)</h3>
+                    <h4 class="school-name">Manuel S. Enverga University Foundation - Lucena</h4>
+                    <p class="college-dept">Basic Education Department</p>
+                    <div class="education-tags">
+                        <span class="tag honor">With High Honors</span>
+                        <span class="tag">STEM</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- EXPERIENCE SECTION -->
+        <section id="experience">
+            <h2>Work Experience</h2>
+
+            <div class="experience-list-container">
+                <!-- ROW 1: U-BIX Corporation (Card + Its Own Carousel) -->
+                <div class="experience-row">
+                    <div class="experience-card">
+                        <div class="card-header">
+                            <div>
+                                <span class="card-badge current">Current Role</span>
+                                <h3>Field Service Engineer</h3>
+                                <h4 class="company-name">U-BIX Corporation - Makati City</h4>
+                            </div>
+                            <span class="experience-date current">November 2024 – Present</span>
+                        </div>
+
+                        <ul class="experience-list">
+                            <li>Deliver on-site technical support, hardware installation, and preventative maintenance
+                                for enterprise multi-function printing and office equipment.</li>
+                            <li>Diagnose electromechanical faults, hardware breakdowns, and network connectivity issues
+                                across corporate client sites.</li>
+                            <li>Configure network printing, scan-to-folder / scan-to-email protocols, and workstation
+                                driver installations.</li>
+                        </ul>
+
+                        <div class="experience-tags">
+                            <span class="tag">Field Service</span>
+                            <span class="tag">Hardware Diagnostics</span>
+                            <span class="tag">Network Integration</span>
+                            <span class="tag">Client Support</span>
+                        </div>
+                    </div>
+
+                    <!-- U-BIX Picture Slideshow -->
+                    <div class="experience-carousel-box" id="ubix-carousel">
+                        <div class="mini-carousel-frame">
+                            <!-- Replace src with your U-BIX work photos -->
+                            <div class="ubix-slide active">
+                                <img src="photos/wrk1.jpg" alt="U-BIX Work 1">
+                            </div>
+                            <div class="ubix-slide">
+                                <img src="photos/wrk2.jpg" alt="U-BIX Work 2">
+                            </div>
+                            <div class="ubix-slide">
+                                <img src="photos/wrk3.jpg" alt="U-BIX Work 3">
+                            </div>
+                            <div class="ubix-slide">
+                                <img src="photos/wrk4.jpg" alt="U-BIX Work 4">
+                            </div>
+                        </div>
+                        <div class="mini-dots">
+                            <span class="ubix-dot active" onclick="goToUbix(0)"></span>
+                            <span class="ubix-dot" onclick="goToUbix(1)"></span>
+                            <span class="ubix-dot" onclick="goToUbix(2)"></span>
+                            <span class="ubix-dot" onclick="goToUbix(3)"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ROW 2: RedQuinix (Card + Its Own Carousel) -->
+                <div class="experience-row">
+                    <div class="experience-card">
+                        <div class="card-header">
+                            <div>
+                                <span class="card-badge">Internship</span>
+                                <h3>Technician Intern</h3>
+                                <h4 class="company-name">RedQuinix Pisobox Lucena Computer Center</h4>
+                            </div>
+                            <span class="experience-date">July 2024 – August 2024</span>
+                        </div>
+
+                        <ul class="experience-list">
+                            <li>Diagnosed, maintained, and resolved hardware and software issues on client computer
+                                systems.</li>
+                            <li>Assisted in the assembly, wiring, network setup, and configuration of Pisobox and
+                                computer units.</li>
+                            <li>Performed operating system installations, reformatting, and peripheral troubleshooting.
+                            </li>
+                        </ul>
+
+                        <div class="experience-tags">
+                            <span class="tag">Hardware Troubleshooting</span>
+                            <span class="tag">Network Setup</span>
+                            <span class="tag">Pisobox Assembly</span>
+                            <span class="tag">Technical Support</span>
+                        </div>
+                    </div>
+
+                    <!-- RedQuinix Picture Slideshow -->
+                    <div class="experience-carousel-box" id="red-carousel">
+                        <div class="mini-carousel-frame">
+                            <!-- Replace src with your RedQuinix / technician photos -->
+                            <div class="red-slide active">
+                                <img src="photos/ojt1.jpg" alt="RedQuinix Work 1">
+                            </div>
+                            <div class="red-slide active">
+                                <img src="photos/ojt2.jpg" alt="RedQuinix Work 1">
+                            </div>
+                            <div class="red-slide active">
+                                <img src="photos/ojt3.jpg" alt="RedQuinix Work 1">
+                            </div>
+                            <div class="red-slide active">
+                                <img src="photos/ojt4.jpg" alt="RedQuinix Work 1">
+                            </div>
+                        </div>
+                        <div class="mini-dots">
+                            <span class="red-dot active" onclick="goToRed(0)"></span>
+                            <span class="red-dot" onclick="goToRed(1)"></span>
+                            <span class="red-dot" onclick="goToRed(2)"></span>
+                            <span class="red-dot" onclick="goToRed(3)"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+
+        <!-- PROJECTS SECTION -->
+        <section id="projects">
+            <h2>Projects</h2>
+
+            <div class="project-row">
+                <!-- Left: Project Card -->
+                <div class="project-card">
+                    <span class="card-badge">Thesis</span>
+                    <h3>Self-Inflating Life Vest Integrated with Pulse Rate Technology and Notification</h3>
+                    <p class="project-description">
+                        The Self-Inflating Life Vest is designed to provide personal safety by automatically
+                        providing flotation support and alerting lifeguards during emergencies. The system integrates
+                        pulse rate monitoring technology using a MAX30102 pulse rate detector to detect abnormal
+                        physiological signals—such as a spike in pulse—that may indicate distress. When such a condition
+                        is identified, the vest automatically inflates to ensure immediate flotation and simultaneously
+                        sends
+                        a real-time notification to the designated lifeguard.
+                    </p>
+
+                    <div class="project-tech">
+                        <span class="tag">Max 30102</span>
+                        <span class="tag">Esp32 Wroom DevBoard</span>
+                        <span class="tag">FSR402 Force Sensing Resistor</span>
+                        <span class="tag">DS3218MG Digital Servo </span>
+                        <span class="tag">CO2 Canister</span>
+                        <span class="tag">XL4015 Buck Converter</span>
+                        <span class="tag">IoT</span>
+                        <span class="tag">Bluetooth</span>
+                        <span class="tag">Java</span>
+                    </div>
+                </div>
+
+                <!-- Right: Project Picture Slideshow -->
+                <div class="experience-carousel-box" id="proj-carousel">
+                    <div class="mini-carousel-frame">
+                        <!-- Replace src with your project photos -->
+                        <div class="proj-slide active">
+                            <img src="photos/thesis1.png" alt="Project Photo 1">
+                        </div>
+                        <div class="proj-slide">
+                            <img src="photos/thesis2.png" alt="Project Photo 2">
+                        </div>
+                        <div class="proj-slide">
+                            <img src="photos/thesis3.png" alt="Project Photo 3">
+                        </div>
+                        <div class="proj-slide">
+                            <img src="photos/thesis4.jpg" alt="Project Photo 4">
+                        </div>
+                        <div class="proj-slide">
+                            <img src="photos/thesis5.png" alt="Project Photo 5">
+                        </div>
+                        <div class="proj-slide">
+                            <img src="photos/thesis6.png" alt="Project Photo 6">
+                        </div>
+                        <div class="proj-slide">
+                            <img src="photos/thesis7.png" alt="Project Photo 7">
+                        </div>
+                        <div class="proj-slide">
+                            <img src="photos/thesis8.png" alt="Project Photo 8">
+                        </div>
+                        <div class="proj-slide">
+                            <img src="photos/thesis9.jpg" alt="Project Photo 9">
+                        </div>
+
+                    </div>
+                    <div class="mini-dots">
+                        <span class="proj-dot active" onclick="goToProj(0)"></span>
+                        <span class="proj-dot" onclick="goToProj(1)"></span>
+                        <span class="proj-dot" onclick="goToProj(2)"></span>
+                        <span class="proj-dot" onclick="goToProj(3)"></span>
+                        <span class="proj-dot" onclick="goToProj(4)"></span>
+                        <span class="proj-dot" onclick="goToProj(5)"></span>
+                        <span class="proj-dot" onclick="goToProj(6)"></span>
+                        <span class="proj-dot" onclick="goToProj(7)"></span>
+                        <span class="proj-dot" onclick="goToProj(8)"></span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Optional: Automatically highlight active navbar item on scroll -->
+        <script>
+            const sections = document.querySelectorAll("section");
+            const navLinks = document.querySelectorAll(".nav-link");
+
+            window.addEventListener("scroll", () => {
+                let current = "";
+                sections.forEach((section) => {
+                    const sectionTop = section.offsetTop - 150;
+                    if (pageYOffset >= sectionTop) {
+                        current = section.getAttribute("id");
+                    }
+                });
+
+                navLinks.forEach((link) => {
+                    link.classList.remove("active");
+                    if (link.getAttribute("href") === `#${current}`) {
+                        link.classList.add("active");
+                    }
+                });
+            });
+        </script>
+</body>
+
+</html>

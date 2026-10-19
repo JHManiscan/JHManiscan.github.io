@@ -1,0 +1,871 @@
+/* Reset & Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 100px;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    background-color: #0f1115;
+    color: #e5e7eb;
+    min-height: 100vh;
+}
+
+/* ================= HEADER / NAVBAR ================= */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2.3rem 5%;
+    background: rgba(33, 37, 45, 0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+}
+
+.brand {
+    font-size: 1.25rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    gap: 2rem;
+}
+
+.nav-link {
+    position: relative;
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    color: #9ca3af;
+    transition: color 0.25s ease;
+    padding: 0.35rem 0;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background: linear-gradient(90deg, #60a5fa, #93c5fd);
+    border-radius: 2px;
+    transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.nav-link:hover,
+.nav-link.active {
+    color: #ffffff;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+    width: 100%;
+}
+
+/* ================= DEFAULT SECTIONS ================= */
+section {
+    min-height: 100vh;
+    padding: 4rem 10%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* Vertically centered */
+    align-items: center;
+    /* Horizontally centered for other sections */
+    text-align: center;
+}
+
+/* Alternating background colors */
+#home {
+    background: #0f1115;
+}
+
+#education {
+    background: #141820;
+}
+
+#experience {
+    background: #0f1115;
+}
+
+#projects {
+    background: #141820;
+}
+
+
+
+/* Titles for Projects, Skills, Experience */
+section h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: #ffffff;
+}
+
+section h2::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background: #60a5fa;
+    border-radius: 2px;
+    margin: 10px auto 0;
+}
+
+section p {
+    color: #9ca3af;
+    font-size: 1.15rem;
+    line-height: 1.8;
+    max-width: 650px;
+}
+
+/* ================= HOME SECTION: 2-COLUMN LAYOUT ================= */
+#home {
+    padding: 3rem 8%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.home-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 4rem;
+    width: 100%;
+    max-width: 1250px;
+}
+
+/* Left Column */
+.home-text {
+    flex: 1.3;
+    text-align: left;
+}
+
+#home .greeting {
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    color: #60a5fa;
+    margin-bottom: 0.35rem;
+    display: block;
+}
+
+#home .greeting1 {
+    font-size: 1.15rem;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    color: #cbd5e1;
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+#home .hero-name {
+    font-size: 3.4rem;
+    /* Large, bold name size */
+    font-weight: 800;
+    color: #ffffff;
+    line-height: 1.15;
+    margin: 0.3rem 0 0.8rem 0;
+    letter-spacing: -0.5px;
+}
+
+
+/* Animated Typewriter Subtitle */
+.hero-role {
+    font-size: 1.55rem;
+    font-weight: 600;
+    margin-bottom: 1.25rem;
+    min-height: 2.2rem;
+    /* Keeps height steady so the bio paragraph doesn't jump */
+    display: flex;
+    align-items: center;
+}
+
+.typing-text {
+    color: #60a5fa;
+    /* Neon accent blue */
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-shadow: 0 0 15px rgba(96, 165, 250, 0.4);
+}
+
+/* Blinking Cursor (|) */
+.cursor {
+    color: #60a5fa;
+    font-weight: 300;
+    margin-left: 3px;
+    animation: blinkCursor 0.75s step-end infinite;
+}
+
+@keyframes blinkCursor {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+}
+
+@media (max-width: 960px) {
+    .hero-role {
+        font-size: 1.25rem;
+        justify-content: center;
+    }
+}
+
+
+#home p {
+    margin: 0;
+    max-width: 650px;
+    font-size: 1.05rem;
+    color: #9ca3af;
+    line-height: 1.8;
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+.home-actions {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin-top: 2rem;
+    flex-wrap: wrap;
+}
+
+/* Download Resume Button */
+.btn-resume {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    background: linear-gradient(135deg, #2563eb, #1d4ed8);
+    color: #ffffff;
+    font-size: 0.95rem;
+    font-weight: 600;
+    text-decoration: none;
+    padding: 0.8rem 1.6rem;
+    border-radius: 50px;
+    box-shadow: 0 4px 15px rgba(37, 99, 235, 0.35);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.btn-resume:hover {
+    background: linear-gradient(135deg, #3b82f6, #2563eb);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(59, 130, 246, 0.5);
+    color: #ffffff;
+}
+
+.btn-resume:active {
+    transform: translateY(0);
+}
+
+.btn-icon {
+    width: 18px;
+    height: 18px;
+}
+
+/* Social Media Icons Container */
+.social-links {
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+}
+
+/* Individual Social Icon Button */
+.social-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.05);
+    color: #9ca3af;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.social-icon:hover {
+    color: #ffffff;
+    background: rgba(96, 165, 250, 0.15);
+    border-color: #60a5fa;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(96, 165, 250, 0.25);
+}
+
+/* Right Column: Carousel Frame */
+.home-carousel {
+    flex: 0.9;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.carousel-frame {
+    position: relative;
+    width: 440px;
+    height: 540px;
+    border-radius: 24px;
+    overflow: hidden;
+    /* Sleek border and neon glow */
+    border: 2px solid rgba(96, 165, 250, 0.3);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6), 0 0 30px rgba(96, 165, 250, 0.15);
+    background: #141820;
+}
+
+.carousel-slide {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    transition: opacity 0.8s ease-in-out, transform 0.8s ease-in-out;
+    transform: scale(1.05);
+}
+
+.carousel-slide.active {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.carousel-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Dots indicator */
+.carousel-dots {
+    display: flex;
+    gap: 0.6rem;
+}
+
+.carousel-dots .dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.25);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.carousel-dots .dot.active {
+    background: #60a5fa;
+    width: 24px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px #60a5fa;
+}
+
+/* Mobile responsive layout */
+@media (max-width: 960px) {
+    .home-container {
+        flex-direction: column-reverse;
+        text-align: center;
+        gap: 2.5rem;
+    }
+
+    .home-text {
+        text-align: center;
+    }
+
+    #home p {
+        text-align: center;
+    }
+
+    .carousel-frame {
+        width: 280px;
+        height: 360px;
+    }
+
+    #home .hero-name {
+        font-size: 2.75rem;
+    }
+}
+
+/* ================= EDUCATION SECTION CARDS ================= */
+.education-container {
+    display: flex;
+    gap: 2rem;
+    max-width: 1100px;
+    width: 100%;
+    margin-top: 3rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.education-card {
+    flex: 1 1 480px;
+    background: rgba(33, 37, 45, 0.65);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 20px;
+    padding: 2.2rem 2rem;
+    text-align: left;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.education-card:hover {
+    transform: translateY(-6px);
+    border-color: rgba(96, 165, 250, 0.4);
+    box-shadow: 0 16px 35px rgba(0, 0, 0, 0.5), 0 0 25px rgba(96, 165, 250, 0.15);
+}
+
+.card-badge {
+    display: inline-block;
+    padding: 0.35rem 0.9rem;
+    background: rgba(96, 165, 250, 0.15);
+    color: #60a5fa;
+    border-radius: 30px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    margin-bottom: 1rem;
+    border: 1px solid rgba(96, 165, 250, 0.3);
+}
+
+.education-card h3 {
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 0.4rem;
+    line-height: 1.3;
+}
+
+.school-name {
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: #93c5fd;
+    margin-bottom: 0.25rem;
+}
+
+.college-dept {
+    font-size: 0.95rem;
+    color: #9ca3af;
+    margin-bottom: 1.5rem !important;
+}
+
+/* Badges for GWA and Honors */
+.education-tags {
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+}
+
+.tag {
+    padding: 0.4rem 0.9rem;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    background: rgba(255, 255, 255, 0.05);
+    color: #e5e7eb;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Green highlight for GWA */
+.tag.gwa {
+    background: rgba(34, 197, 94, 0.15);
+    color: #86efac;
+    border-color: rgba(34, 197, 94, 0.3);
+}
+
+/* Golden highlight for High Honors */
+.tag.honor {
+    background: rgba(234, 179, 8, 0.15);
+    color: #fde047;
+    border-color: rgba(234, 179, 8, 0.35);
+}
+
+/* Responsive adjustments */
+@media (max-width: 640px) {
+    .education-card {
+        flex: 1 1 100%;
+        padding: 1.6rem 1.4rem;
+    }
+
+    .education-card h3 {
+        font-size: 1.15rem;
+    }
+}
+
+/* ================= WORK EXPERIENCE SECTION ================= */
+.experience-list-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+    max-width: 1250px;
+    width: 100%;
+    margin-top: 3rem;
+}
+
+/* Each row holds 1 Card + 1 Matching Picture Carousel */
+.experience-row {
+    display: flex;
+    align-items: stretch;
+    /* Makes the picture match the card's height automatically */
+    justify-content: space-between;
+    gap: 3rem;
+    width: 100%;
+}
+
+.experience-card {
+    flex: 1.3;
+    background: rgba(33, 37, 45, 0.65);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 20px;
+    padding: 1.8rem 2rem;
+    text-align: left;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.experience-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(96, 165, 250, 0.4);
+    box-shadow: 0 16px 35px rgba(0, 0, 0, 0.5), 0 0 25px rgba(96, 165, 250, 0.15);
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+    margin-bottom: 1rem;
+}
+
+.experience-card h3 {
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin: 0.25rem 0 0.2rem 0;
+}
+
+.company-name {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #93c5fd;
+}
+
+.experience-date {
+    padding: 0.35rem 0.9rem;
+    background: rgba(96, 165, 250, 0.1);
+    color: #93c5fd;
+    border: 1px solid rgba(96, 165, 250, 0.25);
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.experience-list {
+    list-style: none;
+    margin-bottom: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.experience-list li {
+    position: relative;
+    padding-left: 1.4rem;
+    color: #9ca3af;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+.experience-list li::before {
+    content: "▹";
+    position: absolute;
+    left: 0;
+    color: #60a5fa;
+    font-size: 1.1rem;
+    line-height: 1.5;
+}
+
+.experience-tags {
+    display: flex;
+    gap: 0.6rem;
+    flex-wrap: wrap;
+}
+
+/* ================= MINI CAROUSEL FOR EACH ROW ================= */
+.experience-carousel-box {
+    flex: 0.85;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.8rem;
+    min-height: 100%;
+}
+
+.mini-carousel-frame {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    /* Matches the exact height of the card on the left */
+    min-height: 280px;
+    border-radius: 20px;
+    overflow: hidden;
+    border: 2px solid rgba(96, 165, 250, 0.3);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5), 0 0 20px rgba(96, 165, 250, 0.15);
+    background: #141820;
+}
+
+.ubix-slide,
+.red-slide {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    transition: opacity 0.8s ease-in-out, transform 0.8s ease-in-out;
+    transform: scale(1.05);
+}
+
+.ubix-slide.active,
+.red-slide.active {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.ubix-slide img,
+.red-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Indicator Dots */
+.mini-dots {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.ubix-dot,
+.red-dot {
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.25);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.ubix-dot.active,
+.red-dot.active {
+    background: #60a5fa;
+    width: 22px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px #60a5fa;
+}
+
+/* Mobile responsive */
+@media (max-width: 960px) {
+    .experience-row {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    .mini-carousel-frame {
+        min-height: 260px;
+        height: 260px;
+    }
+}
+
+/* ================= PROJECTS SECTION ================= */
+.project-row {
+    display: flex;
+    align-items: stretch;
+    justify-content: space-between;
+    gap: 3rem;
+    max-width: 1250px;
+    width: 100%;
+    margin-top: 3rem;
+}
+
+.project-card {
+    flex: 1.3;
+    background: rgba(33, 37, 45, 0.65);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 20px;
+    padding: 2.2rem 2rem;
+    text-align: left;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.project-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(96, 165, 250, 0.4);
+    box-shadow: 0 16px 35px rgba(0, 0, 0, 0.5), 0 0 25px rgba(96, 165, 250, 0.15);
+}
+
+.project-card h3 {
+    font-size: 1.45rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin: 0.5rem 0 1rem 0;
+    line-height: 1.35;
+}
+
+.project-description {
+    color: #9ca3af;
+    font-size: 1rem;
+    line-height: 1.75;
+    margin-bottom: 1.5rem;
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+.project-tech {
+    display: flex;
+    gap: 0.6rem;
+    flex-wrap: wrap;
+}
+
+/* Carousel slides for project */
+.proj-slide {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    transition: opacity 0.8s ease-in-out, transform 0.8s ease-in-out;
+    transform: scale(1.05);
+}
+
+.proj-slide.active {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.proj-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+    background: rgba(15, 17, 22, 0.9);
+}
+
+
+.proj-dot {
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.25);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.proj-dot.active {
+    background: #60a5fa;
+    width: 22px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px #60a5fa;
+}
+
+/* Responsive */
+@media (max-width: 960px) {
+    .project-row {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+}
+
+
+
+
+/* ================= MOBILE PHONES ONLY ================= */
+@media (max-width: 640px) {
+    .navbar {
+        padding: 1rem 1.25rem;
+    }
+
+    .nav-links {
+        gap: 1rem;
+    }
+
+    .nav-link {
+        font-size: 0.85rem;
+    }
+
+    #home .hero-name {
+        font-size: 2.5rem;
+    }
+}
+
+/* ================= SCROLL REVEAL (SLOW POPPING UP) ================= */
+.reveal {
+    opacity: 0;
+    transform: translateY(60px) scale(0.97);
+    /* Starts lower and slightly scaled down */
+    transition: opacity 1.1s cubic-bezier(0.16, 1, 0.3, 1),
+        transform 1.1s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: opacity, transform;
+}
+
+/* State when scrolled into view */
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    /* Smoothly glides up into place */
+}
+
+/* Stagger delay for the second education card so they pop up one by one */
+.education-card:nth-child(2) {
+    transition-delay: 0.18s;
+}
+
+/* ================= SCROLL REVEAL (SLOW POPPING UP & EXIT) ================= */
+.reveal {
+    opacity: 0;
+    transform: translateY(50px) scale(0.97);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    /* Smooth fade-out when leaving */
+    will-change: opacity, transform;
+}
+
+/* State when actively in that section */
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    transition: opacity 1.1s cubic-bezier(0.16, 1, 0.3, 1),
+        transform 1.1s cubic-bezier(0.16, 1, 0.3, 1);
+    /* Elegant pop-up when entering */
+}
+
+/* Active / Current Role Badge Highlight */
+.card-badge.current {
+    background: rgba(34, 197, 94, 0.15);
+    color: #86efac;
+    border-color: rgba(34, 197, 94, 0.35);
+}
+
+.experience-date.current {
+    background: rgba(34, 197, 94, 0.12);
+    color: #86efac;
+    border-color: rgba(34, 197, 94, 0.35);
+}
