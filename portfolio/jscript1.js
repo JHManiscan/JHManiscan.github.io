@@ -15,7 +15,7 @@ function goToSlide(index) {
     showSlide(currentSlide);
 }
 // Automatically change slide every 4 seconds
-setInterval(nextSlide, 4000)
+if (slides.length > 0) setInterval(nextSlide, 4000);
 // ================= SCROLL REVEAL (SHOW ONLY WHILE IN VIEW) =================
 const revealElements = document.querySelectorAll("section, .education-card, .experience-card");
 
@@ -180,3 +180,40 @@ if (navToggle && navMenu) {
         }
     });
 }
+// ================= ONE SCROLL ONLY (PC MODE) =================
+let isScrolling = false;
+const pageSections = document.querySelectorAll("section");
+
+window.addEventListener("wheel", (e) => {
+    // Only apply on PC screens (width > 768px)
+    if (window.innerWidth <= 768) return;
+
+    // Find the currently active section
+    let currentIdx = 0;
+    const scrollPos = window.scrollY + 120;
+
+    pageSections.forEach((sec, idx) => {
+        if (scrollPos >= sec.offsetTop) {
+            currentIdx = idx;
+        }
+    });
+
+    if (isScrolling) {
+        e.preventDefault();
+        return;
+    }
+
+    if (e.deltaY > 25 && currentIdx < pageSections.length - 1) {
+        // Scroll DOWN by one section
+        e.preventDefault();
+        isScrolling = true;
+        pageSections[currentIdx + 1].scrollIntoView({ behavior: "smooth" });
+        setTimeout(() => { isScrolling = false; }, 850);
+    } else if (e.deltaY < -25 && currentIdx > 0) {
+        // Scroll UP by one section
+        e.preventDefault();
+        isScrolling = true;
+        pageSections[currentIdx - 1].scrollIntoView({ behavior: "smooth" });
+        setTimeout(() => { isScrolling = false; }, 850);
+    }
+}, { passive: false });

@@ -7,8 +7,23 @@
 
 html {
     scroll-behavior: smooth;
-    scroll-padding-top: 100px;
+    scroll-padding-top: 80px;
+    /* Offset for sticky navbar */
 }
+
+/* ================= ONE-SCROLL SNAP (PC MODE ONLY) ================= */
+@media (min-width: 769px) {
+    html {
+        scroll-snap-type: y mandatory;
+    }
+
+    section {
+        scroll-snap-align: start;
+        scroll-snap-stop: always;
+        /* Prevents skipping past sections */
+    }
+}
+
 
 body {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
@@ -16,6 +31,8 @@ body {
     color: #e5e7eb;
     min-height: 100vh;
 }
+
+
 
 /* ================= HEADER / NAVBAR ================= */
 .navbar {
@@ -317,67 +334,32 @@ section p {
     box-shadow: 0 5px 15px rgba(96, 165, 250, 0.25);
 }
 
-/* Right Column: Carousel Frame */
-.home-carousel {
-    flex: 0.9;
+/* ================= FLOATING HERO IMAGE (NO BOX) ================= */
+.home-image-container {
+    flex: 1.1;
     display: flex;
-    flex-direction: column;
+    justify-content: center;
     align-items: center;
-    gap: 1rem;
-}
-
-.carousel-frame {
     position: relative;
-    width: 440px;
-    height: 540px;
-    border-radius: 24px;
-    overflow: hidden;
-    /* Sleek border and neon glow */
-    border: 2px solid rgba(96, 165, 250, 0.3);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6), 0 0 30px rgba(96, 165, 250, 0.15);
-    background: #141820;
 }
 
-.carousel-slide {
-    position: absolute;
-    inset: 0;
-    opacity: 0;
-    transition: opacity 0.8s ease-in-out, transform 0.8s ease-in-out;
-    transform: scale(1.05);
-}
-
-.carousel-slide.active {
-    opacity: 1;
-    transform: scale(1);
-}
-
-.carousel-slide img {
+.hero-image {
     width: 100%;
-    height: 100%;
-    object-fit: cover;
+    max-width: 520px;
+    height: auto;
+    max-height: 620px;
+    object-fit: contain;
     display: block;
+    background: transparent;
+    border: none;
+    outline: none;
+    /* Ambient drop shadow */
+    filter: drop-shadow(0 20px 35px rgba(0, 0, 0, 0.65)) drop-shadow(0 0 30px rgba(96, 165, 250, 0.18));
+    transition: transform 0.3s ease;
 }
 
-/* Dots indicator */
-.carousel-dots {
-    display: flex;
-    gap: 0.6rem;
-}
-
-.carousel-dots .dot {
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.25);
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.carousel-dots .dot.active {
-    background: #60a5fa;
-    width: 24px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px #60a5fa;
+.hero-image:hover {
+    transform: scale(1.02);
 }
 
 /* Mobile responsive layout */
@@ -396,10 +378,6 @@ section p {
         text-align: center;
     }
 
-    .carousel-frame {
-        width: 280px;
-        height: 360px;
-    }
 
     #home .hero-name {
         font-size: 2.75rem;
@@ -800,13 +778,16 @@ section p {
 
 /* ================= MOBILE OPTIMIZATIONS ================= */
 
-/* Prevent horizontal page wobble/scroll on mobile */
-html,
-body {
+/* Prevent horizontal page wobble/scroll on mobile without creating double scrollbars */
+html {
     overflow-x: hidden;
+}
+
+body {
     width: 100%;
     -webkit-tap-highlight-color: transparent;
 }
+
 
 /* Base Hamburger Button (Hidden on Desktop) */
 .nav-toggle {
@@ -935,10 +916,10 @@ body {
         gap: 1.25rem;
     }
 
-    /* Home Carousel on Mobile */
-    .carousel-frame {
-        width: min(300px, 85vw);
-        height: 380px;
+    /* Floating Hero Image on Mobile */
+    .hero-image {
+        max-width: 330px;
+        max-height: 400px;
     }
 
     /* Cards */
