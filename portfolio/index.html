@@ -268,77 +268,143 @@
         <section id="projects">
             <h2>Projects</h2>
 
-            <div class="project-row">
-                <!-- Left: Project Card -->
-                <div class="project-card">
-                    <span class="card-badge">Thesis</span>
-                    <h3>Self-Inflating Life Vest Integrated with Pulse Rate Technology and Notification</h3>
-                    <p class="project-description">
-                        The Self-Inflating Life Vest is designed to provide personal safety by automatically
-                        providing flotation support and alerting lifeguards during emergencies. The system integrates
-                        pulse rate monitoring technology using a MAX30102 pulse rate detector to detect abnormal
-                        physiological signals—such as a spike in pulse—that may indicate distress. When such a condition
-                        is identified, the vest automatically inflates to ensure immediate flotation and simultaneously
-                        sends
-                        a real-time notification to the designated lifeguard.
-                    </p>
+            <div class="project-list-container">
+                <!-- ROW 1: Thesis Project -->
+                <div class="project-row">
+                    <!-- Left: Project Card -->
+                    <div class="project-card">
+                        <span class="card-badge">Thesis</span>
+                        <h3>Self-Inflating Life Vest Integrated with Pulse Rate Technology and Notification</h3>
+                        <p class="project-description">
+                            The Self-Inflating Life Vest is designed to provide personal safety by automatically
+                            providing flotation support and alerting lifeguards during emergencies. The system
+                            integrates
+                            pulse rate monitoring technology using a MAX30102 pulse rate detector to detect abnormal
+                            physiological signals—such as a spike in pulse—that may indicate distress. When such a
+                            condition
+                            is identified, the vest automatically inflates to ensure immediate flotation and
+                            simultaneously
+                            sends
+                            a real-time notification to the designated lifeguard.
+                        </p>
 
-                    <div class="project-tech">
-                        <span class="tag">Max 30102</span>
-                        <span class="tag">Esp32 Wroom DevBoard</span>
-                        <span class="tag">FSR402 Force Sensing Resistor</span>
-                        <span class="tag">DS3218MG Digital Servo </span>
-                        <span class="tag">CO2 Canister</span>
-                        <span class="tag">XL4015 Buck Converter</span>
-                        <span class="tag">IoT</span>
-                        <span class="tag">Bluetooth</span>
-                        <span class="tag">Java</span>
+                        <div class="project-tech">
+                            <span class="tag">Max 30102</span>
+                            <span class="tag">Esp32 Wroom DevBoard</span>
+                            <span class="tag">FSR402 Force Sensing Resistor</span>
+                            <span class="tag">DS3218MG Digital Servo </span>
+                            <span class="tag">CO2 Canister</span>
+                            <span class="tag">XL4015 Buck Converter</span>
+                            <span class="tag">IoT</span>
+                            <span class="tag">Bluetooth</span>
+                            <span class="tag">Java</span>
+                        </div>
+                    </div>
+
+                    <!-- Right: Project Picture Slideshow -->
+                    <div class="experience-carousel-box" id="proj-carousel">
+                        <div class="mini-carousel-frame">
+                            <!-- Replace src with your project photos -->
+                            <div class="proj-slide active">
+                                <img src="photos/thesis1.png" alt="Project Photo 1">
+                            </div>
+                            <div class="proj-slide">
+                                <img src="photos/thesis2.png" alt="Project Photo 2">
+                            </div>
+                            <div class="proj-slide">
+                                <img src="photos/thesis3.png" alt="Project Photo 3">
+                            </div>
+                            <div class="proj-slide">
+                                <img src="photos/thesis4.jpg" alt="Project Photo 4">
+                            </div>
+                            <div class="proj-slide">
+                                <img src="photos/thesis5.png" alt="Project Photo 5">
+                            </div>
+                            <div class="proj-slide">
+                                <img src="photos/thesis6.png" alt="Project Photo 6">
+                            </div>
+                            <div class="proj-slide">
+                                <img src="photos/thesis7.png" alt="Project Photo 7">
+                            </div>
+                            <div class="proj-slide">
+                                <img src="photos/thesis8.png" alt="Project Photo 8">
+                            </div>
+                            <div class="proj-slide">
+                                <img src="photos/thesis9.jpg" alt="Project Photo 9">
+                            </div>
+
+                        </div>
+                        <div class="mini-dots">
+                            <span class="proj-dot active" onclick="goToProj(0)"></span>
+                            <span class="proj-dot" onclick="goToProj(1)"></span>
+                            <span class="proj-dot" onclick="goToProj(2)"></span>
+                            <span class="proj-dot" onclick="goToProj(3)"></span>
+                            <span class="proj-dot" onclick="goToProj(4)"></span>
+                            <span class="proj-dot" onclick="goToProj(5)"></span>
+                            <span class="proj-dot" onclick="goToProj(6)"></span>
+                            <span class="proj-dot" onclick="goToProj(7)"></span>
+                            <span class="proj-dot" onclick="goToProj(8)"></span>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Right: Project Picture Slideshow -->
-                <div class="experience-carousel-box" id="proj-carousel">
-                    <div class="mini-carousel-frame">
-                        <!-- Replace src with your project photos -->
-                        <div class="proj-slide active">
-                            <img src="photos/thesis1.png" alt="Project Photo 1">
-                        </div>
-                        <div class="proj-slide">
-                            <img src="photos/thesis2.png" alt="Project Photo 2">
-                        </div>
-                        <div class="proj-slide">
-                            <img src="photos/thesis3.png" alt="Project Photo 3">
-                        </div>
-                        <div class="proj-slide">
-                            <img src="photos/thesis4.jpg" alt="Project Photo 4">
-                        </div>
-                        <div class="proj-slide">
-                            <img src="photos/thesis5.png" alt="Project Photo 5">
-                        </div>
-                        <div class="proj-slide">
-                            <img src="photos/thesis6.png" alt="Project Photo 6">
-                        </div>
-                        <div class="proj-slide">
-                            <img src="photos/thesis7.png" alt="Project Photo 7">
-                        </div>
-                        <div class="proj-slide">
-                            <img src="photos/thesis8.png" alt="Project Photo 8">
-                        </div>
-                        <div class="proj-slide">
-                            <img src="photos/thesis9.jpg" alt="Project Photo 9">
-                        </div>
+                <!-- ROW 2: All Smiles Dental Clinic -->
+                <div class="project-row">
+                    <!-- Left: Project Card -->
+                    <div class="project-card">
+                        <span class="card-badge">Java Application</span>
+                        <h3>All Smiles Dental Clinic</h3>
+                        <p class="project-description">
+                            Welcome to All Smile Dental Clinic, your trusted partner in comprehensive dental care.
+                            At All Smile Clinic, we are dedicated to providing top-notch dental services with a
+                            patient-centric approach, ensuring that every smile we construct is a masterpiece of
+                            health and aesthetics. Our state-of-the-art facility offers a range of services designed to
+                            cater to all your dental needs, ensuring your journey to a perfect smile is as smooth and
+                            pleasant as possible.
+                        </p>
 
+                        <div class="project-tech">
+                            <span class="tag">Java</span>
+                            <span class="tag">Application</span>
+                            <span class="tag">Software Design</span>
+                        </div>
                     </div>
-                    <div class="mini-dots">
-                        <span class="proj-dot active" onclick="goToProj(0)"></span>
-                        <span class="proj-dot" onclick="goToProj(1)"></span>
-                        <span class="proj-dot" onclick="goToProj(2)"></span>
-                        <span class="proj-dot" onclick="goToProj(3)"></span>
-                        <span class="proj-dot" onclick="goToProj(4)"></span>
-                        <span class="proj-dot" onclick="goToProj(5)"></span>
-                        <span class="proj-dot" onclick="goToProj(6)"></span>
-                        <span class="proj-dot" onclick="goToProj(7)"></span>
-                        <span class="proj-dot" onclick="goToProj(8)"></span>
+
+                    <!-- Right: Dental Clinic Picture Slideshow -->
+                    <div class="experience-carousel-box" id="dental-carousel">
+                        <div class="mini-carousel-frame">
+                            <div class="dental-slide active">
+                                <img src="photos/javaapp1.png" alt="All Smiles Dental Clinic Homepage">
+                            </div>
+                            <div class="dental-slide">
+                                <img src="photos/javaapp2.png"
+                                    alt="All Smiles Dental Clinic Services and Appointment System">
+                            </div>
+                            <div class="dental-slide">
+                                <img src="photos/javaapp3.png"
+                                    alt="All Smiles Dental Clinic Services and Appointment System">
+                            </div>
+                            <div class="dental-slide">
+                                <img src="photos/javaapp4.png"
+                                    alt="All Smiles Dental Clinic Services and Appointment System">
+                            </div>
+                            <div class="dental-slide">
+                                <img src="photos/javaapp5.png"
+                                    alt="All Smiles Dental Clinic Services and Appointment System">
+                            </div>
+                            <div class="dental-slide">
+                                <img src="photos/javaapp6.png"
+                                    alt="All Smiles Dental Clinic Services and Appointment System">
+                            </div>
+                        </div>
+                        <div class="mini-dots">
+                            <span class="dental-dot active" onclick="goToDental(0)"></span>
+                            <span class="dental-dot" onclick="goToDental(1)"></span>
+                            <span class="dental-dot" onclick="goToDental(2)"></span>
+                            <span class="dental-dot" onclick="goToDental(3)"></span>
+                            <span class="dental-dot" onclick="goToDental(4)"></span>
+                            <span class="dental-dot" onclick="goToDental(5)"></span>
+                        </div>
                     </div>
                 </div>
             </div>

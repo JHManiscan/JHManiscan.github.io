@@ -17,7 +17,7 @@ function goToSlide(index) {
 // Automatically change slide every 4 seconds
 if (slides.length > 0) setInterval(nextSlide, 4000);
 // ================= SCROLL REVEAL (SHOW ONLY WHILE IN VIEW) =================
-const revealElements = document.querySelectorAll("section, .education-card, .experience-card");
+const revealElements = document.querySelectorAll("section, .education-card, .experience-card, .project-card");
 
 
 const revealObserver = new IntersectionObserver((entries) => {
@@ -152,6 +152,29 @@ function goToProj(index) {
 
 if (projSlides.length > 0) setInterval(nextProj, 4000);
 
+// ================= DENTAL CLINIC CAROUSEL =================
+const dentalSlides = document.querySelectorAll(".dental-slide");
+const dentalDots = document.querySelectorAll(".dental-dot");
+let curDental = 0;
+
+function showDental(index) {
+    dentalSlides.forEach((s, i) => s.classList.toggle("active", i === index));
+    dentalDots.forEach((d, i) => d.classList.toggle("active", i === index));
+}
+
+function nextDental() {
+    if (dentalSlides.length === 0) return;
+    curDental = (curDental + 1) % dentalSlides.length;
+    showDental(curDental);
+}
+
+function goToDental(index) {
+    curDental = index;
+    showDental(curDental);
+}
+
+if (dentalSlides.length > 0) setInterval(nextDental, 4200);
+
 // ================= MOBILE NAVIGATION DRAWER =================
 const navToggle = document.getElementById("navToggle");
 const navMenu = document.getElementById("navMenu");
@@ -180,40 +203,3 @@ if (navToggle && navMenu) {
         }
     });
 }
-// ================= ONE SCROLL ONLY (PC MODE) =================
-let isScrolling = false;
-const pageSections = document.querySelectorAll("section");
-
-window.addEventListener("wheel", (e) => {
-    // Only apply on PC screens (width > 768px)
-    if (window.innerWidth <= 768) return;
-
-    // Find the currently active section
-    let currentIdx = 0;
-    const scrollPos = window.scrollY + 120;
-
-    pageSections.forEach((sec, idx) => {
-        if (scrollPos >= sec.offsetTop) {
-            currentIdx = idx;
-        }
-    });
-
-    if (isScrolling) {
-        e.preventDefault();
-        return;
-    }
-
-    if (e.deltaY > 25 && currentIdx < pageSections.length - 1) {
-        // Scroll DOWN by one section
-        e.preventDefault();
-        isScrolling = true;
-        pageSections[currentIdx + 1].scrollIntoView({ behavior: "smooth" });
-        setTimeout(() => { isScrolling = false; }, 850);
-    } else if (e.deltaY < -25 && currentIdx > 0) {
-        // Scroll UP by one section
-        e.preventDefault();
-        isScrolling = true;
-        pageSections[currentIdx - 1].scrollIntoView({ behavior: "smooth" });
-        setTimeout(() => { isScrolling = false; }, 850);
-    }
-}, { passive: false });
