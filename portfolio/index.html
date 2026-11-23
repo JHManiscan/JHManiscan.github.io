@@ -407,9 +407,81 @@
                         </div>
                     </div>
                 </div>
+
+                <!-- ROW 3: DormQuest -->
+                <div class="project-row">
+                    <!-- Left: Project Card -->
+                    <div class="project-card">
+                        <span class="card-badge">Java Application</span>
+                        <h3>DormQuest</h3>
+                        <p class="project-description">
+                            DormQuest is a mobile app designed to simplify the search for dorms and apartments
+                            in and around Lucban, Quezon. It streamlines the process of finding nearby
+                            accommodations suited to students and working individuals, letting users filter
+                            listings by price, number of rooms, amenities, and distance to their school or
+                            workplace. Each listing includes detailed information, photos, and direct contact
+                            details for landlords or property managers. DormQuest partners with local landlords
+                            to keep listings accurate and up to date, giving the community a trustworthy
+                            platform for finding their next home.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tag">Java</span>
+                            <span class="tag">OOP</span>
+                            <span class="tag">Application</span>
+                        </div>
+                    </div>
+
+                    <!-- Right: DormQuest Picture Slideshow -->
+                    <div class="experience-carousel-box" id="dorm-carousel">
+                        <div class="mini-carousel-frame">
+                            <div class="dorm-slide active">
+                                <img src="photos/dorm1.png" alt="DormQuest App Screenshot 1">
+                            </div>
+                            <div class="dorm-slide">
+                                <img src="photos/dorm2.png" alt="DormQuest App Screenshot 2">
+                            </div>
+                            <div class="dorm-slide">
+                                <img src="photos/dorm3.png" alt="DormQuest App Screenshot 3">
+                            </div>
+                            <div class="dorm-slide">
+                                <img src="photos/dorm4.png" alt="DormQuest App Screenshot 4">
+                            </div>
+                            <div class="dorm-slide">
+                                <img src="photos/dorm5.png" alt="DormQuest App Screenshot 5">
+                            </div>
+                        </div>
+                        <div class="mini-dots">
+                            <span class="dorm-dot active" onclick="goToDorm(0)"></span>
+                            <span class="dorm-dot" onclick="goToDorm(1)"></span>
+                            <span class="dorm-dot" onclick="goToDorm(2)"></span>
+                            <span class="dorm-dot" onclick="goToDorm(3)"></span>
+                            <span class="dorm-dot" onclick="goToDorm(4)"></span>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </section>
 
+
+        <!-- DormQuest Slider -->
+        <script>
+            let dormIndex = 0;
+            const dormSlides = document.querySelectorAll('.dorm-slide');
+            const dormDots = document.querySelectorAll('.dorm-dot');
+
+            function goToDorm(n) {
+                dormSlides[dormIndex].classList.remove('active');
+                dormDots[dormIndex].classList.remove('active');
+                dormIndex = n;
+                dormSlides[dormIndex].classList.add('active');
+                dormDots[dormIndex].classList.add('active');
+            }
+
+            setInterval(() => {
+                goToDorm((dormIndex + 1) % dormSlides.length);
+            }, 3000);
+        </script>
 
         <!-- Optional: Automatically highlight active navbar item on scroll -->
         <script>
